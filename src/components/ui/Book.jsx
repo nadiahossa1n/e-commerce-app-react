@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Price from "./Price";
 
 const Book = ({ book }) => {
-  const [img, setImg] = useState();
+  const [img, setImg] = useState(null);
 
   const mountedRef = useRef(true);
 
@@ -21,7 +20,7 @@ const Book = ({ book }) => {
         // When the component mounts
         mountedRef.current = false;
     }
-  })
+  }, [] )
 
   return (
     <div className="book">
